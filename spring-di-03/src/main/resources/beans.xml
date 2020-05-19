@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <bean id="address" class="pojo.Address" />
+
+    <bean id="user" class="pojo.User">
+        <!--  第一种注入方式 普通值注入     -->
+        <property name="name" value="张驰" />
+        <!--  第二种注入方式 bean注入      -->
+        <property name="address" ref="address" />
+        <!--  第三种注入方式 数组注入      -->
+        <property name="school">
+            <array>
+                <value>水心小学</value>
+                <value>温州十七中学</value>
+                <value>诸暨天马实验高中</value>
+                <value>诸暨荣怀高中</value>
+                <value>浙江育英职业技术学院</value>
+            </array>
+        </property>
+        <!--  第四种注入方式 List注入      -->
+        <property name="games">
+            <list>
+                <value>彩虹六号</value>
+                <value>CS:GO</value>
+                <value>率土之滨</value>
+            </list>
+        </property>
+        <!--  第五种注入方式 Map注入      -->
+        <property name="friends">
+            <map>
+                <entry key="甲" value="乙" />
+                <entry key="丁" value="丙" />
+            </map>
+        </property>
+        <!--   第六种注入方式 Set注入     -->
+        <property name="book">
+            <set>
+                <value>三国演义</value>
+                <value>红楼梦</value>
+                <value>水浒传</value>
+                <value>西游记</value>
+            </set>
+        </property>
+        <!--   第七种注入方式 空值注入     -->
+        <property name="wife">
+            <null />
+        </property>
+    </bean>
+</beans>
